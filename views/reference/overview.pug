@@ -1,0 +1,46 @@
+extends base
+
+block content  
+    main.main 
+
+        .card-container
+            each tourData in tours
+                .card
+                    .card__header
+                        .card__picture
+                            .card__picture-overlay &nbsp;
+                            img.card__picture-img(src=`/img/tours/${tourData.imageCover}`, alt=`${tourData.name}`)
+                        h3.heading-tertirary
+                            span= tourData.name
+
+                    .card__details
+                        h4.card__sub-heading=`${tourData.difficulty} ${tourData.duration}-days tour`
+                        p.card__text= tourData.summary
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-map-pin')
+                            span= tourData.startLocation.description
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-calendar')
+                            span= tourData.startDates[0].toLocaleString('en-us', { month: 'long' , year: 'numeric'})
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-flag')
+                            span= `${tourData.locations.length} stops`
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-user')
+                            span= `${tourData.maxGroupSize} people`
+
+                    .card__footer
+                        p
+                            span.card__footer-value= `$${tourData.price}`
+                            | 
+                            span.card__footer-text per person
+                        p.card__ratings
+                            span.card__footer-value= tourData.ratingsAverage
+                            | 
+                            span.card__footer-text= `rating (${tourData.ratingsQuantity})`
+                        a.btn.btn--green.btn--small(href= `/tour/${tourData.slug}`) Details
+

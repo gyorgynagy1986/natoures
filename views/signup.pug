@@ -1,0 +1,25 @@
+extends base
+block content
+    section.signUpMainContainer
+      .background-container
+        nav
+          ul.signUpMainContainer-list
+            include _listItemsNavbar
+      .container-signup
+        .signUpform
+          h1 CREAT YOUR ACCOUNT 
+          form
+            .form-container
+              label.form-label(for='name')
+              input#name.form-control(type='text', placeholder='Name')
+            .form-container
+              label.form-label(for='email')
+              input#email.form-control(type='email', placeholder='Email')
+            .form-container
+              label.form-label(for='password')
+              input#password.form-control(type='password', placeholder='Password')
+            .form-container
+              label.form-label(for='passwordConf')
+              input#passwordConf.form-control(type='password', placeholder='Password confirm')
+            .form-container
+              button.form-btn SIGN UP

@@ -1,0 +1,18 @@
+extends account 
+block content-dinamic 
+    .right-dash-dinamic-content
+     form.input-container-add-tour
+      .mb-3
+          label.form-label(for='tourname')= tour.name
+          input#update-tourname.form-control(type='text', value=`${tour.name}`)
+      .mb-3
+          label.form-label(for='difficulties')= tour.difficulty
+          input#update-difficulties.form-control(type='text', value=`${tour.difficulty}`)
+      .mb-3
+          label.form-label(for='date')= tour.startDates
+          input#update-date.form-control(type='text', value=`${tour.startDates}`)
+      .mb-3
+          label.form-label(for='summary')= tour.summary
+          input#update-summary.form-control(type='message', value=`${tour.summary}`)
+      button.form-btn.change-color-btn(type="submit") UPDATE
+      p#tour-id-update.tour-id-update= tour.id

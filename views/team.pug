@@ -1,0 +1,23 @@
+extends account 
+block content-dinamic 
+    .admin-all-tour-container
+        each guidesData in guides
+            .card
+                .card__header
+                    .card__picture
+                        .card__picture-overlay &nbsp;
+                        img.card__picture-img(src=`/img/users/${guidesData.photo}`, alt=`${guidesData.name}`)
+                    h3.heading-tertirary
+                        span= guidesData.name
+                
+                .card__footer
+                    p
+                        span.card__footer-value= `name`
+                        | 
+                        span.card__footer-text= guidesData.name
+                    p.card__ratings
+                        span.card__footer-value= `status`
+                        | 
+                        span.card__footer-text= guidesData.role
+                    p.card__footer-text= guidesData.id
+                    p.card__footer-text= guidesData.email

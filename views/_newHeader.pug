@@ -1,0 +1,21 @@
+header.header
+  .container-mainHeader
+    .social
+      img(src='/assets/twitter.png', alt='twitter')
+      img(src='/assets/instagram.png', alt='instagram')
+      img(src='/assets/facebook.png', alt='facebook')
+      img(src='/assets/whatsapp.png', alt='wahtsapp')
+    .empty
+    .loginAndSinguoContainer
+        if user
+            a.logout--logout 
+                p.logout Log out
+            a.nav__el(href="/me")
+                img(src=`/img/users/${user.photo}` alt='').nav__user-img
+                span.userna= user.name.split(' ')[0]
+        else       
+            a(href='/login')
+                p.login Log in
+            a.sginup(href='/signup') 
+                p.signUp Sign up
+            img(src="/assets/default.png", alt="defaultuser")

@@ -1,0 +1,30 @@
+extends base
+block content
+    section.login-mainContainer
+      .background-container
+        nav
+          ul.mainContainer-list
+            include _listItemsNavbar
+      .text-box.login-up
+        .text-flex
+          .text-box-login
+            p
+              | lo 
+              span g
+              | in
+          form.login-form-get
+            .form-container-login
+              label.form-label-login(for='email')
+              input#email.form-control-login(type='email', placeholder='Email')
+            .form-container-login
+              label.form-label-login(for='password')
+              input#password.form-control-login(type='password', placeholder='Password')
+            .login-button
+              button.btn-form-login
+                | login
+                span
+                  img(src='/assets/login-arrow.svg', alt='#')
+              button.btn-form-login.btn1
+              button.btn-form-login.btn2
+
+

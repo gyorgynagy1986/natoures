@@ -1,0 +1,18 @@
+extends account 
+block content-dinamic 
+    .right-dash-dinamic-content
+     form.input-container-add-tour
+      .mb-3
+          label.form-label(for='tourname') Name of the Tour
+          input#tourname.form-control(type='text', placeholder=`name`)
+      .mb-3
+          label.form-label(for='difficulties') Tour difficulties
+          input#difficulties.form-control(type='text', placeholder='easy, medium, hard')
+      .mb-3
+          label.form-label(for='date') Date (Supperted form : 2000-10-21)
+          input#date.form-control(type='text', placeholder='Start date : 0000-00-00')
+      .mb-3
+          label.form-label(for='summary') Summary
+          input#summary.form-control(type='message', placeholder='Sort description')
+      
+      button.form-btn.change-color-btn(type="submit") NEW TOUR

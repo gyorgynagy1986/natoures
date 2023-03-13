@@ -1,0 +1,33 @@
+extends base
+block content
+    section.mainContainer-admin
+      .background-container
+        nav
+          ul.mainContainer-list.admin-list-color
+            include _navbarAdmin
+    section.admin-container
+      .left-dash
+        .photo-cpontainer-admin
+          img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
+        .photo-up
+          input.form__upload(type='file', accept='image/*', id='photo',  name='photo')
+        form.admin-form
+          .form-container-admin
+            label.admin-label(for='name')
+            input#name.admin-control(type='text', value=`${user.name}`)
+          .form-container-admin
+            label.admin-label(for='email')
+            input#email.admin-control(type='email', value=`${user.email}`)
+          .admin-line
+          .form-container-admin
+            label.admin-label(for='password')
+            input#password.admin-control(type='password', value='Password')
+          .form-container-admin
+            label.admin-label(for='passwordConf')
+            input#passwordConf.admin-control(type='password', value='Password confirm')
+          .admin-container-admin.admin-update-btn
+            button.form-btn.admin-btn-hover UPDATE
+      .right-dash
+        .right-dash-dinamic-content
+           block content-dinamic 
+            

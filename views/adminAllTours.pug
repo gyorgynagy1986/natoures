@@ -1,0 +1,40 @@
+extends account 
+block content-dinamic 
+   
+    .right-dash-dinamic-content
+      .remove-section
+        form.for-select-this-shit
+          .input-and-button
+            .form-remove-tour
+              label.admin-label-tour-remove(for='rtid')
+              input#rtid.admin-control-tour-remove(type='text', placeholder='Copy the id to remove the TOUR')
+            .form-remove-tour-btn
+              button.remove-tour-btn remove        
+        .line-remove-section
+          img(src='/assets/line-remove-section.svg', alt='line-remove')
+      .justforsomespace
+      .add-new-tour-button
+        button.remove-tour-btn 
+         a(href='/new-tour') new tour   
+      .justforsomespace
+      .justforsomespace
+      .section-content-admin-owerflow
+        each tourData in tour 
+          .tour-admin-card
+            .box-admin-tour-card-photo
+              img(src=`/img/tours/${tourData.imageCover}`, alt=`${tourData.name}`)
+            .box-admin-tour-card-text
+              .box-admin-tour-card-text-box
+                p.admin-tour-card-title= tourData.name
+                p.admin-tour-description= `${tourData.difficulty} , ${tourData.duration} days tour with ${tourData.locations.length} stops for maximun ${tourData.maxGroupSize} participants`
+                p.admin-tour-description Yellowknife, CAN , December 2021
+              .box-admin-tour-card-text-team-photoBox
+                .box-admin-tour-card-text-team-photoBox-photo
+            .box-admin-tour-card-button
+              p.box-admin-tour-card-button-id= `ID: ${tourData.id}`
+                .box-tour-card-buttons
+                  p.edit-button-tour 
+                    a(href=`/updateTour/${tourData.id}`) EDIT
+                  p.edit-button-tour 
+                   a(href=`/tour/${tourData.slug}`) VIEW
+            

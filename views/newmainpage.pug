@@ -1,0 +1,31 @@
+extends base
+
+block content
+    section.mainContainer
+      .background-container
+        nav
+          ul.mainContainer-list
+            include _listItemsNavbar
+      .text-box
+        .text-flex
+          .text-box-h1
+            h1 Novis Touries Agency
+          p Are you ready to explore the world ?
+          button.btn contact
+          span.text-right-btn
+            img(src='/assets/bg-svg.svg', alt='')
+      .top-tours-header
+        img(src='/assets/design-element.png', alt='#')
+        .top-tours-h1
+          h1 TOP TOURS
+        .top-tours-p
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus purus sit tempor pellentesque et tincidunt congue. Quis sed vivamus lorem metus.
+            | In risus cursus sapien interdum nulla lectus nam pretium tristique. ulla lectus nam pretium tristique.
+    section.section-cards
+      .space
+      .card-container
+        each tourData in tours
+             include _tourCards
+      .space  
+    

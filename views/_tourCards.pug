@@ -1,0 +1,29 @@
+.cards 
+  .header-photo
+    img(src=`/img/tours/${tourData.imageCover}`, alt=`${tourData.name}`)
+  .tour-name
+    p= tourData.name
+  .tour-dif
+    p=`${tourData.difficulty} ${tourData.duration}-days tour`
+  .tour-description
+    p=tourData.summary
+  .icon-top
+    .icon-conatiner
+      img(src='/assets/map.svg', alt='')
+      span.span-icon-left.tfs= tourData.startLocation.description 
+    .icon-conatiner
+      img(src='/assets/calendar.svg', alt='')
+      span.span-icon-right.tfs=tourData.startDates[0].toLocaleString('en-us', { month: 'long' , year: 'numeric'})
+  .icon-bottom
+    .icon-conatiner
+      img(src='/assets/pin.svg', alt='')
+      span.span-icon-left.tfs= `${tourData.locations.length} stops` 
+    .icon-conatiner
+      img(src='/assets/people.svg', alt='')
+      span.span-icon-right.tfs= `${tourData.maxGroupSize} people`
+  .card-line
+    img(src='/assets/line.svg', alt='')
+  .price-button-container
+    p=`$${tourData.price}`
+    a(href=`/tour/${tourData.slug}`)
+      button info/book

@@ -1,0 +1,23 @@
+extends account 
+block content-dinamic 
+   
+    .right-dash-dinamic-content
+      .remove-section
+        form.for-select-this-shit
+          .input-and-button
+            .form-remove-tour
+              label.admin-label-tour-remove(for='rtid')
+              input#rtid.admin-control-tour-remove(type='text', placeholder='Copy the id to remove the TOUR')
+            .form-remove-tour-btn
+              button.remove-tour-btn remove        
+        .line-remove-section
+          img(src='/assets/line-remove-section.svg', alt='line-remove')
+      .justforsomespace
+      .add-new-tour-button
+        button.remove-tour-btn 
+         a(href='/new-tour') new tour   
+      .justforsomespace
+      .justforsomespace
+      .section-content-admin-owerflow
+        each tourData in tour 
+          
