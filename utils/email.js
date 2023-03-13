@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 const nodemailer = require("nodemailer");
 const pug = require('pug');
-const htmlToText = require('html-To-text');
+//const htmlToText = require('html-To-text');
 
 // new Email(user, ulr).sendWelcome();
 
@@ -55,7 +55,7 @@ module.exports = class Email {
             to: this.to,
             subject,
             html,
-            text: htmlToText.fromString(html)
+           // text: htmlToText.fromString(html)
         };
 
         // 3) Create a transport nad send email
